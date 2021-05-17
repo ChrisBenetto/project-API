@@ -1,0 +1,7 @@
+EST PROMU , 11 OFFRE , 1N ENTREPRISE
+OFFRE : poste , entreprise , date_postulation , notes , contact , date_de_relance , url_offre
+EST DISPO , 11 OFFRE , 1N SITE
+
+ENTREPRISE : nom , type structure , département
+:
+SITE : nom

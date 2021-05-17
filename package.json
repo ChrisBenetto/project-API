@@ -1,0 +1,35 @@
+{
+  "name": "API-ojob",
+  "version": "1.0.0",
+  "description": "API de gestion de recherche d'emploi",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisBenetto/project-API.git"
+  },
+  "keywords": [
+    "API",
+    "jobs manager"
+  ],
+  "author": "@ChristopheBenetto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisBenetto/project-API/issues"
+  },
+  "homepage": "https://github.com/ChrisBenetto/project-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.2"
+  }
+}
