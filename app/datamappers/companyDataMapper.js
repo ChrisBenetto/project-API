@@ -9,11 +9,11 @@ module.exports = {
         return result.rows[0];
     },
     addOne : async(post) => {
-        const result = await client.query(`INSERT INTO "company" ("name","structure","department")) VALUES ($1,$2,$3) RETURNING *`, [post.name , post.structure, post.department]);
+        const result = await client.query(`INSERT INTO "company" ("name","structure","department") VALUES ($1,$2,$3) RETURNING *`, [post.name , post.structure, post.department]);
         return result.rows[0];
     },
     deleteOne : async(id) => {
-        const result = await client.query('DELETE FROM "website" WHERE "id" = $1' , [id]);
+        const result = await client.query('DELETE FROM "company" WHERE "id" = $1' , [id]);
         return result.rows[0];
     }
 

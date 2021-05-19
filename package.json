@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/ChrisBenetto/project-API#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "pg": "^8.6.0"

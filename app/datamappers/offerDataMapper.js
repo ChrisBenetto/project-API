@@ -9,7 +9,10 @@ module.exports = {
         return result.rows[0];
     },
     addOne : async(post) => {
-        const result = await client.query(`INSERT INTO "offer" ("employment" , "notes" ,"contact","offer_url","website_id","company_id") VALUES ($1,$2,$3) RETURNING *`, [post.name , post.structure, post.department]);
+        const result = await client.query(
+            `INSERT INTO "offer" ("employment" , "notes" ,"contact","offer_url","website_id","company_id") 
+                VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`, 
+                    [post.employment , post.notes ,post.contact ,post.offer_url ,post.website_id, post.company_id]);
         return result.rows[0];
     },
     deleteOne : async(id) => {

@@ -1,34 +1,66 @@
+### Récupérer toutes les structures
 GET http://localhost:3000/api/companies
 Content-Type: application/json
-###
 
+### Récupérer une structure
 GET http://localhost:3000/api/company/1
 Content-Type: application/json
+
+### Ajout d'une structure
+POST http://localhost:3000/api/companies
+Content-Type: application/json
+
+{
+        "name": "association NPM",
+        "structure": "Association",
+        "department": 17
+}
+
 ###
+DELETE http://localhost:3000/api/company/3
+
+### Récupérer toutes les site web de référence
 GET http://localhost:3000/api/websites
 Content-Type: application/json
-###
 
+### Ajout d'un nouveau site de référence
 POST http://localhost:3000/api/websites
 Content-Type: application/json
 
 {
-
     "name":"RegionsJob"
-    
 }
 
-###
-DELETE http://localhost:3000/api/website/3
+### Suppression d'un site de référence
+DELETE http://localhost:3000/api/website/1
 Content-Type: application/json
-###
-GET http://localhost:3000/api/websites
+
+### Récupération d'un site
+GET http://localhost:3000/api/website/1
 Content-Type: application/json
-###
+
+### Récupérer toutes les offres d'emploi postulées
 GET http://localhost:3000/api/offers
 Content-Type: application/json
-###
 
+### Ajout d'une nouvelle offre d'emploi
+POST http://localhost:3000/api/offers
+Content-Type: application/json
+
+{
+    "employment" : "Développeur Full-Stack",
+    "notes" : "Prise de contact sur Slack",
+    "contact" : "Mr Handler",
+    "offer_url" : "www.company.com/jobs/01",
+    "website_id" : 1,
+    "company_id" : 1
+}
+
+### Suppression d'une offre
+DELETE http://localhost:3000/api/offer/3
+Content-Type: application/json
+
+### Selection d'une offre
 GET http://localhost:3000/api/offer/1
 Content-Type: application/json
 ###

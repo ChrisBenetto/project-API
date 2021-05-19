@@ -19,7 +19,9 @@ router.delete('/website/:id', websiteController.deleteOneWebsite);
 
 
 router.get('/offers' , offerController.allOffers);
+router.post('/offers' , offerController.addOffer);
 router.get('/offer/:id' , offerController.oneOffer);
+router.delete('/offer/:id' , offerController.deleteOffer);
 
 
 
