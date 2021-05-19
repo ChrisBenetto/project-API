@@ -9,7 +9,20 @@ GET http://localhost:3000/api/websites
 Content-Type: application/json
 ###
 
-GET http://localhost:3000/api/website/1
+POST http://localhost:3000/api/websites
+Content-Type: application/json
+
+{
+
+    "name":"RegionsJob"
+    
+}
+
+###
+DELETE http://localhost:3000/api/website/3
+Content-Type: application/json
+###
+GET http://localhost:3000/api/websites
 Content-Type: application/json
 ###
 GET http://localhost:3000/api/offers
