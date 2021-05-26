@@ -18,5 +18,9 @@ module.exports = {
     deleteOne : async(id) => {
         const result = await client.query('DELETE FROM "offer" WHERE "id" = $1' , [id]);
         return result.rows[0];
-    }
+    },
+    updateOne : async (field,value,id) => {
+        const result = await client.query(`UPDATE "offer" SET ${field} = $1 WHERE "id" = $2 RETURNING *`,[value,id]);
+        return result.rows[0];
+        }
 }

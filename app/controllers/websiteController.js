@@ -32,6 +32,27 @@ module.exports = {
         const websiteId = parseInt(req.params.id,10);
         await websiteDataMapper.deleteOne(websiteId);
         res.json(`L'enregistrement à été supprimé`);
+    },
+    updateOneWebsite : async (req,res,next) => {
+        try {
+
+            const websiteId = parseInt(req.params.id,10);
+            const data = req.body;
+            console.log("data" , data);
+            if(!data) {
+                return next();
+            }
+            for(const property in data){
+                await websiteDataMapper.updateOne(property,data[property],websiteId)
+            }
+            res.json(`Le site source a été modifiée .`);
+
+
+        } catch(error) {
+        
+            console.error(error)
+            res.status(500).json("erreur serveur");
+        }
     }
 
 }

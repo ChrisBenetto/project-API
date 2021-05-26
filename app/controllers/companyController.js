@@ -2,7 +2,7 @@ const companyDataMapper = require('../datamappers/companyDataMapper');
 module.exports = {
     allCompanies : async (_,res) => {
         const companies = await companyDataMapper.getAll();
-        res.json({ data : {companies}});
+        res.json({ companies });
     },
     oneCompany : async (req,res) => {
         const companyId = parseInt(req.params.id,10);
@@ -26,6 +26,27 @@ module.exports = {
         const companyId = parseInt(req.params.id,10);
         await companyDataMapper.deleteOne(companyId);
         res.json(`L'enregistrement à été supprimé`);
+    },
+    updateOneCompany : async (req,res,next) => {
+        try {
+
+            const companyId = parseInt(req.params.id,10);
+            const data = req.body;
+            console.log("data" , data);
+            if(!data) {
+                return next();
+            }
+            for(const property in data){
+                await companyDataMapper.updateOne(property,data[property],companyId)
+            }
+            res.json(`L'entreprise à été modifiée .`);
+
+
+        } catch(error) {
+        
+            console.error(error)
+            res.status(500).json("erreur serveur");
+        }
     }
 
 }

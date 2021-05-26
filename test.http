@@ -17,6 +17,14 @@ Content-Type: application/json
 }
 
 ###
+PATCH http://localhost:3000/api/company/1
+Content-Type: application/json
+
+{
+    "name" : "entreprise_update"
+}
+
+### Suppression d'une structure
 DELETE http://localhost:3000/api/company/3
 
 ### Récupérer toutes les site web de référence
@@ -39,6 +47,13 @@ Content-Type: application/json
 GET http://localhost:3000/api/website/1
 Content-Type: application/json
 
+### Modification d'un site
+PATCH http://localhost:3000/api/website/4
+Content-Type: application/json
+
+{
+    "name" : "RegionsJob Rhône-Alpes"
+}
 ### Récupérer toutes les offres d'emploi postulées
 GET http://localhost:3000/api/offers
 Content-Type: application/json
@@ -63,4 +78,12 @@ Content-Type: application/json
 ### Selection d'une offre
 GET http://localhost:3000/api/offer/1
 Content-Type: application/json
-###
+
+### Modification d'une offre
+PATCH http://localhost:3000/api/offer/1
+Content-Type: application/json
+
+{
+    "contact" : "Mr Benetto",
+    "employment" : "Développeur DevOps"
+}

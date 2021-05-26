@@ -30,7 +30,27 @@ module.exports = {
 
     deleteOffer : async(req,res) => {
             const offerId = parseInt(req.params.id,10);
-            await oferDataMapper.deleteOne(offerId);
+            await offerDataMapper.deleteOne(offerId);
             res.json(`L'enregistrement à été supprimé`);
+        },
+    updateOneOffer : async (req,res,next) => {
+        try {
+
+            const offerId = parseInt(req.params.id,10);
+            const data = req.body;
+            console.log("data" , data);
+            if(!data) {
+                return next();
+            }
+            for(const property in data){
+                await offerDataMapper.updateOne(property,data[property],offerId)
+            }
+            res.json(`L'offre à été modifiée .`);
+
+        } catch(error) {
+        
+            console.error(error)
+            res.status(500).json("erreur serveur");
         }
     }
+}
