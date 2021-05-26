@@ -1,0 +1,8 @@
+- Faire insertion simultanée Offre et structure
+- Gestion des erreurs
+- Mise en place de Joi
+- Fonction SQL pour la date de relance
+- Création view suivi de postulation
+- Finir documentation jsDOC
+- Refaire le ReadMe
+- Deploiement sur Heroku

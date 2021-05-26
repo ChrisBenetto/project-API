@@ -3,30 +3,55 @@ const companyController = require('../controllers/companyController');
 const websiteController = require('../controllers/websiteController');
 const offerController = require('../controllers/offerController');
 const router = express.Router();
-
-/* Routes companies */
-
-router.get('/companies' , companyController.allCompanies);
-router.post('/companies', companyController.addOneCompany);
-router.get('/company/:id' , companyController.oneCompany);
-router.delete('/company/:id', companyController.deleteOneCompany);
-router.patch('/company/:id', companyController.updateOneCompany);
-
-
-router.get('/websites' , websiteController.allWebsites);
-router.post('/websites', websiteController.addOneWebsite);
-router.get('/website/:id' , websiteController.oneWebsite);
-router.delete('/website/:id', websiteController.deleteOneWebsite);
-router.patch('/website/:id', websiteController.updateOneWebsite);
-
-
-router.get('/offers' , offerController.allOffers);
-router.post('/offers' , offerController.addOffer);
-router.get('/offer/:id' , offerController.oneOffer);
-router.delete('/offer/:id' , offerController.deleteOffer);
-router.patch('/offer/:id', offerController.updateOneOffer);
-
+    /**
+     * Vue d'ensemble
+     * @route GET /global
+     * @returns { viewGlobal } 200 - Vue d'ensemble
+     * @returns {Error} 500 - Une erreur serveur
+     */
 router.get('/global' , offerController.getGlobalView);
+
+router.route('/companies')
+    /**
+     * Liste des structures
+     * @route GET /companies
+     * @returns {Companies} 200 - La liste des structures
+     * @returns {Error} 500 - Une erreur serveur
+     */
+    .get(companyController.allCompanies)
+    /**
+     * Ajouter une structure
+     * @route POST /companies
+     * @param {company} company.body.required - Un objet contenant les informations d'une structure
+     * @returns {Company} 200 - La structure crée
+     * @returns {Error} 500 - Structure déja présente
+     */
+    .post(companyController.addOneCompany);
+
+router.route('/company/:id')
+    .get(companyController.oneCompany)
+    .patch(companyController.updateOneCompany)
+    .delete(companyController.deleteOneCompany);
+
+router.route('/websites')
+    .get(websiteController.allWebsites)
+    .post(websiteController.addOneWebsite);
+router.route('/website/:id')
+    .get(websiteController.oneWebsite)
+    .patch(websiteController.updateOneWebsite)
+    .delete(websiteController.deleteOneWebsite);
+
+router.route('/offers')
+    .get(offerController.allOffers)
+    .post(offerController.addOffer);
+
+router.route('/offer/:id')
+    .get(offerController.oneOffer)
+    .patch(offerController.updateOneOffer)
+    .delete(offerController.deleteOffer)
+
+
+
 
 
 
