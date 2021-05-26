@@ -87,3 +87,6 @@ Content-Type: application/json
     "contact" : "Mr Benetto",
     "employment" : "Développeur DevOps"
 }
+
+### Vue d'ensemble
+GET http://localhost:3000/api/global

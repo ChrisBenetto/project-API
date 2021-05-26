@@ -1,3 +1,4 @@
+const { off } = require('../datamappers/client');
 const offerDataMapper = require('../datamappers/offerDataMapper');
 module.exports = {
 
@@ -5,6 +6,11 @@ module.exports = {
 
         const offers = await offerDataMapper.getAll();
         res.json({ data : {offers}});
+    },
+
+    getGlobalView : async(_,res) => {
+        const viewGlobal = await offerDataMapper.selectViewGlobal();
+        res.json({ viewGlobal });
     },
 
     oneOffer : async (req,res) => {

@@ -4,6 +4,10 @@ module.exports = {
         const result = await client.query(`SELECT * FROM "offer"`);
         return result.rows;
     },
+    selectViewGlobal : async () => {
+        const result = await client.query(`SELECT * FROM "view_global"`);
+        return result.rows;
+    },
     getOne : async(id) => {
         const result = await client.query(`SELECT * FROM "offer" WHERE id = $1`, [id]);
         return result.rows[0];

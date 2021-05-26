@@ -26,6 +26,8 @@ router.get('/offer/:id' , offerController.oneOffer);
 router.delete('/offer/:id' , offerController.deleteOffer);
 router.patch('/offer/:id', offerController.updateOneOffer);
 
+router.get('/global' , offerController.getGlobalView);
+
 
 
 module.exports = router;
