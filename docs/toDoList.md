@@ -1,4 +1,4 @@
-- Finir documentation jsDOC
+- Finir documentation jsDOC x 
 - Faire insertion simultanée Offre et structure
 - Gestion des erreurs
 - Mise en place de Joi
