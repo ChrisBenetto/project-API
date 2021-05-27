@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "start": "node .",
+    "deploy": "node .",
     "import": "psql -f ./data/seeding.sql -d ojob"
   },
   "repository": {

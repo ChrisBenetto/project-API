@@ -14,6 +14,8 @@ API de gestion de candidatures à des offres d'emploi . Le but centraliser ses c
 - PostgresQL
 - Express
 - node-pg
+- dotenv
+- JsDoc
   
 ## Installation 
 
@@ -41,8 +43,10 @@ To deploy this project run
   
 ## Roadmap
 
-- Additional browser support
-
-- Add more integrations
+- Insert in association table
+- Errors management
+- Using Joi for validation
+- Deploy on Heroku
+- Create Front-End tool for API
 
   

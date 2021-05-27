@@ -1,8 +1,4 @@
-- Finir documentation jsDOC x 
 - Faire insertion simultanée Offre et structure
 - Gestion des erreurs
 - Mise en place de Joi
-- Fonction SQL pour la date de relance
-- Création fonction SQL suivi de postulation
-- Refaire le ReadMe
 - Deploiement sur Heroku
