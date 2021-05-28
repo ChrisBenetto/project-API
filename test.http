@@ -63,11 +63,11 @@ POST http://localhost:3000/api/offers
 Content-Type: application/json
 
 {
-    "employment" : "Développeur Full-Stack",
-    "notes" : "Prise de contact sur Slack",
-    "contact" : "Mr Handler",
-    "offer_url" : "www.company.com/jobs/01",
-    "website_id" : 1,
+    "employment" : "Dev WordPress",
+    "notes" : "Prise de contact dans un repas",
+    "contact" : "Mr Jaja",
+    "offer_url" : "www.jaja.com",
+    "website_id" : 2,
     "company_id" : 1
 }
 
